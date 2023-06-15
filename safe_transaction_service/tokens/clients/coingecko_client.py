@@ -17,7 +17,6 @@ from safe_transaction_service.tokens.clients.exceptions import (
 
 logger = logging.getLogger(__name__)
 
-
 class CoingeckoClient:
     ASSET_BY_NETWORK = {
         EthereumNetwork.ARBITRUM_ONE: "arbitrum-one",
@@ -144,3 +143,6 @@ class CoingeckoClient:
 
     def get_metis_usd_price(self) -> float:
         return self.get_price("metis-token")
+
+    def get_shimmer_usd_price(self) -> float:
+        return self.get_price("shimmer")

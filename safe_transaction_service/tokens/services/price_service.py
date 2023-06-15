@@ -290,7 +290,7 @@ class PriceService:
         ):
             return self.get_xdc_usd_price()
         else:
-            return self.get_ether_usd_price()
+            return self.coingecko_client.get_shimmer_usd_price()
 
     @cachedmethod(cache=operator.attrgetter("cache_token_eth_value"))
     @cache_memoize(60 * 30, prefix="balances-get_token_eth_value")  # 30 minutes
